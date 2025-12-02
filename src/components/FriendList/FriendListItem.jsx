@@ -1,12 +1,14 @@
+import styles from "../FriendList/FriendList.module.css";
 function FriendListItem({ avatar, name, isOnline }) {
   return (
-    <div className="friend-list-item">
+    <>
       <img src={avatar} alt={name} width="48" />
       <p>{name}</p>
-      <p className={isOnline ? "status-online" : "status-offline"}>
+      <p
+        className={`${styles.friendStatus} ${isOnline ? styles.online : styles.offline}`}>
         {isOnline ? "Online" : "Offline"}
       </p>
-    </div>
+    </>
   );
 }
 export default FriendListItem;
